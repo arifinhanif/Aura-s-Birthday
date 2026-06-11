@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurnal Ilmiah Kebahagiaan: Studi Kasus Aura Helisya Renata</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display untuk Vibes Puisi & JetBrains Mono untuk Vibes Lab -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f4f7fc;
+            color: #1e293b;
+        }
+        .serif-poetic {
+            font-family: 'Playfair Display', serif;
+        }
+        .mono-lab {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Custom scrollbar ala lab */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+        /* Grid background effect */
+        .lab-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+        }
+        /* Animation keyframes */
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.03); }
+        }
+        .pulse-element {
+            animation: pulse-slow 4s infinite ease-in-out;
+        }
+        /* Bubble floating animation */
+        .bubble {
+            position: absolute;
+            bottom: -20px;
+            background: rgba(14, 165, 233, 0.15);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 50%;
+            animation: floatUp 6s infinite linear;
+            pointer-events: none;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="lab-grid min-h-screen selection:bg-sky-200 selection:text-sky-900 relative overflow-x-hidden">
+
+    <!-- Ambient Sound System Overlay (Aesthetic Trigger) -->
+    <div id="audio-panel" class="fixed bottom-6 right-6 z-50 bg-white/80 backdrop-blur-md border border-slate-200 shadow-xl px-4 py-3 rounded-2xl flex items-center gap-3 transition-all duration-500 hover:shadow-2xl">
+        <div class="w-2.5 h-2.5 rounded-full bg-sky-500 animate-ping" id="audio-indicator"></div>
+        <div class="text-xs font-semibold uppercase tracking-wider text-slate-600 mono-lab" id="audio-text">Audio Feed: Off</div>
+        <button onclick="toggleAudio()" class="bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg font-medium tracking-tight hover:bg-sky-700 transition-colors duration-300 shadow-sm focus:outline-none">
+            Connect
+        </button>
+        <!-- Background Audio (Placeholder - can be replaced with real URL or embed) -->
+        <audio id="bg-music" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Lab Background Interactive Canvas -->
+    <div id="particle-container" class="fixed inset-0 pointer-events-none z-40 overflow-hidden"></div>
+
+    <div class="max-w-4xl mx-auto px-4 py-12 md:py-20 relative z-10">
+        
+        <!-- ================= HEADER: MANUSKRIP ILMIAH ================= -->
+        <header class="border-b-2 border-slate-900 pb-8 mb-12 relative">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-sky-700 bg-sky-100 border border-sky-200 px-3 py-1 rounded-full mono-lab">
+                        Volume 18 • Nomor 06 • Edisi Juni 2026
+                    </span>
+                </div>
+                <div class="text-right text-xs text-slate-500 mono-lab">
+                    <div>Diterima: 19 Juni 2008</div>
+                    <div>Direvisi: 19 Juni 2026</div>
+                    <div>Status: Diterima Sepenuh Hati</div>
+                </div>
+            </div>
+            
+            <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight text-slate-900 serif-poetic leading-tight mb-4">
+                Analisis Struktur Termodinamika Kebahagiaan Makro: Studi Kasus Entropi Romantis pada Subjek Aura Helisya Renata
+            </h1>
+
+            <div class="flex flex-wrap gap-y-2 gap-x-6 text-sm text-slate-700 font-medium border-t border-dashed border-slate-300 pt-4">
+                <div><strong class="text-slate-900">Peneliti Utama:</strong> Pengagum Rahasiamu</div>
+                <div><strong class="text-slate-900">Afiliasi:</strong> Laboratorium Dinamika Rasa & Afeksi Kontemporer</div>
+                <div><strong class="text-slate-900">Subjek Utama:</strong> Aura Helisya Renata (Calon Teknolog Pangan UB '26)</div>
+            </div>
+        </header>
+
+        <!-- WATERMARK POETIK (Nadin Amizah Vibes) -->
+        <div class="serif-poetic text-center text-slate-400 italic text-lg my-12 tracking-wide px-6 max-w-2xl mx-auto leading-relaxed pulse-element">
+            "Mengecil aku di pelukanmu, membesar semua harapan baikku... Bumi dan semesta pun tahu, hari ini struktur takdir bergeser demi merayakan lahirmu."
+        </div>
+
+        <!-- ================= SECTION 1: ABSTRAK ================= -->
+        <section class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-8 mb-8 transition-all hover:shadow-md">
+            <h2 class="text-xs uppercase font-bold tracking-widest text-sky-800 border-b border-sky-100 pb-2 mb-4 mono-lab flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-sky-500"></span> 01. ABSTRAK
+            </h2>
+            <p class="text-sm md:text-base leading-relaxed text-slate-700 text-justify mb-4">
+                Penelitian jangka panjang ini bertujuan untuk mengevaluasi dampak esensial dari eksistensi subjek bernama <strong>Aura Helisya Renata</strong> terhadap kestabilan emosional peneliti selama masa pengamatan. Tepat pada tanggal 19 Juni 2026, subjek secara resmi mencapai fase kematangan struktural ke-18 tahun (terhitung sejak peluncuran original subjek pada 19 Juni 2008). Data empiris menunjukkan adanya lonjakan radiasi kebahagiaan sebesar 1906% di sekitar koordinat kehadiran subjek. Menggunakan metodologi kekaguman tanpa syarat, tulisan ini disusun bukan hanya sebagai bentuk dokumentasi ilmiah, melainkan sebagai manifesto romantis terstruktur guna memberikan ucapan: <em>Selamat Hari Kelahiran</em>. Diharapkan hasil analisis ini dapat memperkuat jalinan ikatan molekuler antara peneliti dan subjek di masa depan.
+            </p>
+            <p class="text-xs text-slate-500 italic font-medium pt-2 border-t border-slate-100">
+                <strong class="text-slate-800 font-bold not-italic mono-lab">Kata Kunci:</strong> Aura Helisya Renata, Ulang Tahun Ke-18, Teknologi Pangan Brawijaya, Reaksi Endotermik Cinta.
+            </p>
+        </section>
+
+        <!-- ================= SECTION 2: METODOLOGI & BAHAN ================= -->
+        <section class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-8 mb-8 transition-all hover:shadow-md">
+            <h2 class="text-xs uppercase font-bold tracking-widest text-sky-800 border-b border-sky-100 pb-2 mb-4 mono-lab flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-sky-500"></span> 02. METODOLOGI & KOMPOSISI BAHAN
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-6">
+                Sebagai calon saintis di bidang <span class="text-sky-700 font-semibold">Teknologi Pangan Universitas Brawijaya</span>, subjek diketahui terbentuk dari kombinasi unsur kimia murni dan resep pangan tingkat tinggi yang dikurasi langsung oleh semesta. Berikut adalah visualisasi fraksi massa pembentuk subjek:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Unsur 1 -->
+                <div class="border border-slate-100 bg-slate-50/50 p-4 rounded-xl flex gap-4 items-start">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500 text-white flex flex-col justify-center items-center font-bold shadow-md shadow-sky-100 shrink-0">
+                        <span class="text-xs leading-none">Au</span>
+                        <span class="text-[10px] opacity-80 font-normal">19</span>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-900">Aura-nium (Unsur Utama Kemilau)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Konsentrasi 40%. Unsur langka yang memancarkan gelombang kecantikan visual dan ketenangan hati yang konstan dalam radius tak terbatas.</p>
+                    </div>
+                </div>
+                <!-- Unsur 2 -->
+                <div class="border border-slate-100 bg-slate-50/50 p-4 rounded-xl flex gap-4 items-start">
+                    <div class="w-12 h-12 rounded-xl bg-sky-900 text-white flex flex-col justify-center items-center font-bold shadow-md shadow-slate-200 shrink-0">
+                        <span class="text-xs leading-none">Ch</span>
+                        <span class="text-[10px] opacity-80 font-normal">08</span>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-900">Carbohydrate of Kindness</h3>
+                        <p class="text-xs text-slate-500 mt-1">Konsentrasi 30%. Sifat pangan esensial yang memberi energi kebahagiaan instan bagi siapa saja yang dia sapa, manis alamiah tanpa pemanis buatan.</p>
+                    </div>
+                </div>
+                <!-- Unsur 3 -->
+                <div class="border border-slate-100 bg-slate-50/50 p-4 rounded-xl flex gap-4 items-start">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500 text-white flex flex-col justify-center items-center font-bold shadow-md shadow-indigo-100 shrink-0">
+                        <span class="text-xs leading-none">Sc</span>
+                        <span class="text-[10px] opacity-80 font-normal">26</span>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-900">Sweet-Cottage Core (Ekstrak Puisi)</h3>
+                        <p class="text-xs text-slate-500 mt-1">Konsentrasi 20%. Diperkaya dengan melodi Taylor Swift dan kelembutan Nadin Amizah, menciptakan struktur jiwa yang sangat puitis dan anggun.</p>
+                    </div>
+                </div>
+                <!-- Unsur 4 -->
+                <div class="border border-slate-100 bg-slate-50/50 p-4 rounded-xl flex gap-4 items-start">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex flex-col justify-center items-center font-bold shadow-md shadow-emerald-100 shrink-0">
+                        <span class="text-xs leading-none">Ub</span>
+                        <span class="text-[10px] opacity-80 font-normal">18</span>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-900">Brawijaya Catalytic Enzyme</h3>
+                        <p class="text-xs text-slate-500 mt-1">Konsentrasi 10%. Enzim ambisi positif yang memicu dorongan belajar luar biasa untuk menaklukkan dunia pangan fungsional di Malang nanti.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 3: HASIL DAN ANALISIS GRAFIK ================= -->
+        <section class="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 md:p-8 mb-8 transition-all hover:shadow-md">
+            <h2 class="text-xs uppercase font-bold tracking-widest text-sky-800 border-b border-sky-100 pb-2 mb-4 mono-lab flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-sky-500"></span> 03. HASIL & ANALISIS GRAFIK FUNGSI HATI
+            </h2>
+            <p class="text-sm leading-relaxed text-slate-600 mb-6">
+                Berdasarkan kalkulasi komputasi menggunakan persamaan kurva kardioid kuantum <span class="mono-lab text-xs font-semibold bg-slate-100 px-1 py-0.5 rounded text-sky-700">(x²+y²-1)³ - x²y³ = 0</span>, berikut adalah representasi grafis tingkat rindu dan kekaguman konstan peneliti yang memuncak tegak lurus seiring berjalannya waktu:
+            </p>
+
+            <!-- BINGKAI GRAFIK ESTETIK (Bisa diganti image riil / grafik svg) -->
+            <div class="border-2 border-dashed border-slate-300 rounded-2xl p-6 bg-slate-50 flex flex-col items-center justify-center relative overflow-hidden min-h-[300px]">
+                <!-- Grid Overlay internal grafik -->
+                <div class="absolute inset-0 opacity-25" style="background-size: 15px 15px; background-image: linear-gradient(to right, #94a3b8 1px, transparent 1px), linear-gradient(to bottom, #94a3b8 1px, transparent 1px);"></div>
+                
+                <!-- SVG Grafik Jantung Hati Math Sempurna -->
+                <svg viewBox="-20 -20 40 40" class="w-48 h-48 drop-shadow-xl relative z-10 animate-pulse">
+                    <!-- Sumbu X dan Y -->
+                    <line x1="-20" y1="0" x2="20" y2="0" stroke="#cbd5e1" stroke-width="0.3" stroke-dasharray="1" />
+                    <line x1="0" y1="-20" x2="0" y2="20" stroke="#cbd5e1" stroke-width="0.3" stroke-dasharray="1" />
+                    
+                    <!-- Plot Hati Indah -->
+                    <path d="M 0,5 
+                             C  -10,-5  -20,-15  -10,-23 
+                             C  -3,-28    0,-18    0,-15 
+                             C   0,-18    3,-28   10,-23 
+                             C  20,-15   10,-5     0,5 Z" 
+                          fill="url(#heartGradient)" 
+                          stroke="#0284c7" 
+                          stroke-width="0.5" 
+                          transform="scale(0.7) translate(0, 5) rotate(180)"/>
+                    
+                    <defs>
+                        <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#bae6fd" />
+                            <stop offset="100%" stop-color="#38bdf8" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <div class="mt-4 text-center relative z-10">
+                    <span class="text-xs font-bold mono-lab text-slate-500 uppercase tracking-wider block mb-1">Gambar 3.1: Kurva Kontur Grafik Fluks Kangen Absolut</span>
+                    <span class="text-[11px] text-slate-400 block max-w-md italic">Sumbu Vertikal (y) merepresentasikan intensitas doa, Sumbu Horizontal (x) merepresentasikan rotasi waktu bumi. Nilai limit mendekati tak terhingga ketika x = Aura.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= LIVE COUNTER DATA TIME ================= -->
+        <div class="bg-gradient-to-br from-slate-900 to-sky-950 border border-slate-800 rounded-2xl p-6 md:p-8 text-white shadow-xl mb-8 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-sky-500/10 rounded-full blur-2xl"></div>
+            <h3 class="text-xs uppercase font-bold tracking-widest text-sky-400 mb-4 mono-lab flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-sky-400 animate-ping"></span> REAL-TIME CHRONO-DATASET
+            </h3>
+            <p class="text-xs text-slate-400 mb-4 mono-lab">Metrik Durasi Pengamatan Kontinu ("Sejak Peneliti Jatuh Hati pada Subjek"):</p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                <div class="bg-white/5 border border-white/10 p-3 rounded-xl backdrop-blur-sm">
+                    <span id="days" class="text-2xl md:text-3xl font-bold block text-sky-300 mono-lab">00</span>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-400 block mt-1">Hari</span>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-3 rounded-xl backdrop-blur-sm">
+                    <span id="hours" class="text-2xl md:text-3xl font-bold block text-sky-300 mono-lab">00</span>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-400 block mt-1">Jam</span>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-3 rounded-xl backdrop-blur-sm">
+                    <span id="minutes" class="text-2xl md:text-3xl font-bold block text-sky-300 mono-lab">00</span>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-400 block mt-1">Menit</span>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-3 rounded-xl backdrop-blur-sm">
+                    <span id="seconds" class="text-2xl md:text-3xl font-bold block text-sky-300 mono-lab">00</span>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-400 block mt-1">Detik</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= FITUR INTERAKTIF UTAMA: REAKSI KIMIA ================= -->
+        <div class="bg-sky-50 border border-sky-100 rounded-2xl p-6 md:p-8 text-center shadow-inner mb-8 transition-all duration-500" id="reaction-box">
+            <h3 class="text-sm font-bold text-sky-900 uppercase tracking-wider mb-2 mono-lab">Eksperimen Stimulasi Termal</h3>
+            <p class="text-xs text-slate-600 max-w-md mx-auto mb-6">
+                Klik aktuator di bawah untuk menginduksi reaksi katalis asmara inter-molekuler tingkat lanjut.
+            </p>
+            
+            <button onclick="triggerChemicalReaction()" class="bg-gradient-to-r from-sky-600 to-sky-800 text-white font-bold tracking-wide uppercase text-xs px-6 py-3.5 rounded-xl shadow-lg shadow-sky-700/20 hover:shadow-sky-600/40 hover:-translate-y-0.5 transition-all duration-300 transform active:translate-y-0 focus:outline-none ring-2 ring-sky-300 ring-offset-2">
+                🧪 Jalankan Reaksi Kimia Asmara
+            </button>
+
+            <!-- Hidden Message Section Container (Animate on Click) -->
+            <div id="secret-report" class="hidden opacity-0 mt-8 text-left border-t border-sky-200 pt-6 transition-all duration-700">
+                <div class="bg-white border border-sky-200 p-5 md:p-6 rounded-xl shadow-sm">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 block mb-2 mono-lab">✔ Hasil Reaksi Berhasil Diekstraksi:</span>
+                    <p class="serif-poetic text-base md:text-lg text-slate-800 leading-relaxed italic">
+                        "I love you to the moon and to Saturn, Aura. Jika teknologi pangan bisa mengawetkan nutrisi terbaik, maka puisi ini dibuat untuk mengawetkan rasa kagumku agar tak pernah kedaluwarsa oleh waktu. Selamat 18 tahun, berbahagialah sejauh radius semesta sanggup membayangkannya."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WATERMARK POETIK 2 (Taylor Swift Vibes) -->
+        <div class="serif-poetic text-center text-slate-400 italic text-base my-12 tracking-wide px-6 max-w-2xl mx-auto leading-relaxed">
+            "And you'll save all your dirtiest jokes for me... And at every table, I'll save you a seat, lover."
+        </div>
+
+        <!-- ================= SECTION 4: KESIMPULAN ================= -->
+        <section class="bg-white border-2 border-slate-900 rounded-2xl shadow-sm p-6 md:p-8 mb-12 transition-all relative">
+            <!-- Decorative Lab Ribbon -->
+            <div class="absolute top-0 right-8 transform -translate-y-1/2 bg-slate-900 text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-md mono-lab">
+                Final Chapter
+            </div>
+            
+            <h2 class="text-xs uppercase font-bold tracking-widest text-slate-900 border-b border-slate-200 pb-2 mb-4 mono-lab flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-slate-900"></span> 04. KESIMPULAN & REKOMENDASI PENELITI
+            </h2>
+            <div class="space-y-4 text-sm md:text-base text-slate-700 leading-relaxed">
+                <p>
+                    Berdasarkan seluruh data pengamatan, pengujian afeksi, dan penantian rotasi tanggal, maka dapat ditarik kesimpulan mutlak bahwa: <strong>Aura Helisya Renata adalah anomali terindah yang pernah divalidasi oleh garis waktu bumi.</strong> Di usiamu yang ke-18 ini, tidak ada lagi hipotesis ragu; semuanya telah terbukti nyata sebagai doa-doa baik.
+                </p>
+                <p>
+                    <strong>Rekomendasi untuk Subjek:</strong> Tetaplah tumbuh menjadi manusia yang hangat, langkahkan kakimu ke Universitas Brawijaya dengan kepala tegak, pelajari ilmu pangan kesukaanmu, dan ketahuilah bahwa di suatu sudut semesta yang konstan, ada seorang peneliti yang selalu mendoakan bahagiamu agar konvergen dan stabil selamanya.
+                </p>
+            </div>
+
+            <!-- Tanda Tangan Formal Peneliti -->
+            <div class="mt-8 pt-6 border-t border-dashed border-slate-200 flex justify-end">
+                <div class="text-right">
+                    <div class="text-xs text-slate-400 mono-lab mb-1">Tertanda secara digital,</div>
+                    <div class="serif-poetic text-lg font-bold italic text-slate-900 tracking-wide">Pengagum Rahasiamu</div>
+                    <div class="text-[10px] font-semibold text-sky-700 uppercase tracking-widest mt-0.5 mono-lab">ID Peneliti: #9406-AURA</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FOOTER DATA REFERENSI ================= -->
+        <footer class="text-center text-[11px] text-slate-400 border-t border-slate-200 pt-6 font-medium mono-lab">
+            <div>Dibuat dengan segenap algoritma rindu &amp; cinta mekanis.</div>
+            <div class="mt-1">© 2026 Jurnal Dinamika Hati Aura. All Rights Reserved.</div>
+        </footer>
+
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // --- 1. LOGIC COUNTER DATA TIME (Sejak kapan mengagumi subjek) ---
+        // Kita set sebuah tanggal fiktif/asli di masa lalu, misal 1 Januari 2024 atau tanggal jadian/mulai suka
+        const startDate = new Date("June 19, 2024 00:00:00").getTime();
+
+        function updateChronometer() {
+            const now = new Date().getTime();
+            const distance = now - startDate; // Hitung maju (sudah berapa lama mengagumi)
+
+            // Kalkulasi Matematika Waktu
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Injeksi teks ke elemen HTML dengan padding 0 jika di bawah 10
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }
+        // Jalankan interval counter setiap 1 detik
+        setInterval(updateChronometer, 1000);
+        updateChronometer(); // Run instantly
+
+
+        // --- 2. AUDIO MANAGEMENT SYSTEM ---
+        const bgMusic = document.getElementById("bg-music");
+        const audioIndicator = document.getElementById("audio-indicator");
+        const audioText = document.getElementById("audio-text");
+
+        function toggleAudio() {
+            if (bgMusic.paused) {
+                bgMusic.play().catch(e => console.log("Audio play blocked by browser policies. Need interactive click."));
+                audioIndicator.classList.remove("bg-sky-500");
+                audioIndicator.classList.add("bg-emerald-500");
+                audioText.innerText = "Audio Feed: Streaming";
+            } else {
+                bgMusic.pause();
+                audioIndicator.classList.remove("bg-emerald-500");
+                audioIndicator.classList.add("bg-sky-500");
+                audioText.innerText = "Audio Feed: Paused";
+            }
+        }
+
+
+        // --- 3. FITUR UTAMA: EKSPERIMEN REAKSI KIMIA ASMARA ---
+        function triggerChemicalReaction() {
+            const secretReport = document.getElementById("secret-report");
+            const reactionBox = document.getElementById("reaction-box");
+            
+            // Tampilkan pesan rahasia secara anggun (Fade in effect)
+            secretReport.classList.remove("hidden");
+            setTimeout(() => {
+                secretReport.classList.add("opacity-100");
+            }, 50);
+
+            // Beri sentuhan warna berganti pada box eksperimen sebagai sinyal reaksi berhasil
+            reactionBox.classList.remove("bg-sky-50", "border-sky-100");
+            reactionBox.classList.add("bg-gradient-to-r", "from-sky-50", "to-indigo-50/50", "border-sky-300");
+
+            // Generate Gelembung Reaksi Kimia Biru/Ungu Soft di Layar (Eksklusif & Estetik)
+            const particleContainer = document.getElementById("particle-container");
+            
+            for (let i = 0; i < 30; i++) {
+                const bubble = document.createElement("div");
+                bubble.classList.add("bubble");
+                
+                // Randomisasi ukuran, posisi horizontal, dan delay animasi gelembung
+                const size = Math.random() * 25 + 10; // 10px - 35px
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${Math.random() * 100}vw`;
+                
+                // Variasi warna soft (biru muda, indigo, ungu muda)
+                const hue = Math.random() > 0.5 ? 195 : 225; // Sky blue or Indigo tones
+                bubble.style.background = `rgba(${hue === 195 ? '14, 165, 233' : '99, 102, 241'}, ${Math.random() * 0.2 + 0.1})`;
+                bubble.style.animationDelay = `${Math.random() * 2}s`;
+                bubble.style.animationDuration = `${Math.random() * 4 + 4}s`; // 4s - 8s
+                
+                particleContainer.appendChild(bubble);
+
+                // Hapus element setelah selesai terbang agar memori tidak bocor
+                setTimeout(() => {
+                    bubble.remove();
+                }, 6000);
+            }
+        }
+    </script>
+</body>
+</html>
