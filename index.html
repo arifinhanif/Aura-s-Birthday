@@ -769,10 +769,6 @@ function startIntro(){
 ══════════════════════════════ */
 const tracks=[
   {t:'Sampai Jadi Debu',a:'Banda Neira',id:'9CHAP_Sdc9A'},
-  {t:'Sorai',a:'Nadin Amizah',id:'0GHuWW8bV4I'},
-  {t:'Rumpang',a:'Nadin Amizah',id:'FVNmDMHB3Zk'},
-  {t:'All Too Well',a:'Taylor Swift',id:'tollGa3S0o4'},
-  {t:'The 1',a:'Taylor Swift',id:'IHFBrLR1bqw'},
 ];
 let curT=0,playing=false,ytReady=false,gestureGiven=false,unmutePending=false,ytPlayer=null;
 const vizEls=[];
@@ -787,7 +783,7 @@ function onYouTubeIframeAPIReady(){
     playerVars:{autoplay:1,mute:1,controls:0,rel:0,playsinline:1,enablejsapi:1,modestbranding:1},
     events:{
       onReady(e){ytReady=true;e.target.playVideo();if(gestureGiven){unmuteNow()}else{unmutePending=true}},
-      onStateChange(e){if(e.data===YT.PlayerState.ENDED)nextT()}
+      onStateChange(e){if(e.data===YT.PlayerState.ENDED){ytPlayer.seekTo(0);ytPlayer.playVideo()}}
     }
   });
 }
